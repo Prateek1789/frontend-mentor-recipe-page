@@ -30,10 +30,12 @@
     --clr-Rose-800: hsl(332, 51%, 32%);
     --clr-Rose-50: hsl(330, 100%, 98%);
     --clr-Grey-600: hsl(0, 0%, 38%);
+    --clr-link: hsl(228, 45%, 44%);
     --border-radius-100: 0.75rem;
     --border-radius-top-200: 1.5rem 1.5rem 0rem 0rem;
     --border-radius-botton-200: 0rem 0rem 1.5rem 1.5rem;
     --border-width-100: 1px solid var(--clr-Stone-150);
+    --font-size-50: 0.6875rem;
     --font-size-100: 1rem;
     --font-size-125: 1.25rem;
     --font-size-150: 1.75rem;
@@ -58,6 +60,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: var(--font-size-200);
+    font-weight: var(--font-weight-400);
 }
 
 h2 {
@@ -89,14 +92,11 @@ li::marker {
     font-weight: var(--font-weight-700);
 }
 
-body {
-    height: 100%;
-    width: 100vw;
-}
-
 /* --- Main Styling ---  */
 
 body {
+    height: 100%;
+    width: 100vw;
     display: grid;
     grid-template-rows: repeat(3, auto);
     grid-template-areas: 
@@ -139,7 +139,7 @@ body {
 }
 
 .header__title {
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
 }
 
 .header__description {
@@ -228,11 +228,11 @@ body {
 }
 
 .nutrition__table tr {
-    border-bottom: var(--border-width-100);
+    border-block-end: var(--border-width-100);
 }
 
 .nutrition__table tr:last-child {
-    border-bottom: none;
+    border-block-end: none;
 }
 
 .nutrition__table th,
@@ -260,11 +260,11 @@ body {
 }
 
 .attribution { 
-    font-size: 11px; 
+    font-size: var(--font-size-50); 
     text-align: center; 
 }
 
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color:  var(--clr-link); }
 
 @media (min-width: 48rem) {
     body {
