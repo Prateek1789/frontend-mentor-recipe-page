@@ -232,13 +232,15 @@ body {
     border-bottom: none;
 }
 
+.nutrition__table th,
 .nutrition__table td {
     padding-block: 0.75rem;
     text-align: start;
 }
 
 .nutrition__item {
-    width: 50%;
+    width: 45%;
+    font-weight: normal;
     padding-inline-start: 2rem;
     color: var(--clr-Grey-600);
 }
@@ -288,6 +290,10 @@ body {
 
     .header__image img {
         border-radius: var(--border-radius-100);
+    }
+
+    .nutrition__item {
+        width: 50%;
     }
 
     .footer {
