@@ -35,6 +35,7 @@
     --border-radius-botton-200: 0rem 0rem 1.5rem 1.5rem;
     --border-width-100: 1px solid var(--clr-Stone-150);
     --font-size-100: 1rem;
+    --font-size-125: 1.25rem;
     --font-size-150: 1.75rem;
     --font-size-200: clamp(2.25rem, 2.75vw, 2.75rem);
     --font-weight-400: 400; /* Font weight for Youn Serif & Outfit */
@@ -183,11 +184,13 @@ body {
 
 .prep-time {
     padding: 1.5rem;
+    gap: 1rem;
     background-color: var(--clr-Rose-50);
     border-radius: var(--border-radius-100);
 }
 
 .prep-time__title {
+    font-size: var(--font-size-125);
     font-family: 'Outfit', sans-serif;
     font-weight: var(--font-weight-700);
     color: var(--clr-Rose-800);
