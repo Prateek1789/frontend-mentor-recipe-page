@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Stone-100: hsl(30, 54%, 90%);
+    --clr-Stone-150: hsl(30, 18%, 87%);
+    --clr-Stone-600: hsl(30, 10%, 34%);
+    --clr-Stone-900: hsl(24, 5%, 18%);
+    --clr-Brown-800: hsl(14, 45%, 36%);
+    --clr-Rose-800: hsl(332, 51%, 32%);
+    --clr-Rose-50: hsl(330, 100%, 98%);
+    --clr-Grey-600: hsl(0, 0%, 38%);
+    --border-radius-100: 0.75rem;
+    --border-radius-top-200: 1.5rem 1.5rem 0rem 0rem;
+    --border-radius-botton-200: 0rem 0rem 1.5rem 1.5rem;
+    --border-width-100: 1px solid var(--clr-Stone-150);
+    --font-size-100: 1rem;
+    --font-size-150: 1.75rem;
+    --font-size-200: clamp(2.25rem, 2.75vw, 2.75rem);
+    --font-weight-400: 400; /* Font weight for Youn Serif & Outfit */
+    --font-weight-600: 600; /* Font weight for Outfit */
+    --font-weight-700: 700; /* Font weight for Outfit */
+}
+
+/* Simple CSS Reset */
+
+a {
+    text-decoration: none;
+    color: var(--clr-White);
+    font-size: var(--font-size-100);
+    font-weight: var(--font-weight-600);
+}
+
+h1, h2, h3 {
+    font-family: 'Young Serif', serif;
+    font-weight: var(--font-weight-700);
+}
+
+h1 {
+    font-size: var(--font-size-200);
+}
+
+h2 {
+    color: var(--clr-Brown-800);
+    font-size: var(--font-size-150);
+    font-weight: var(--font-weight-400);
+}
+
+li, p {
+    line-height: 1.5;
+    color: var(--clr-Stone-600);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+ol, ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+li::marker {
+    color: var(--clr-Brown-800);
+    font-family: 'Outfit', sans-serif;
+    font-weight: var(--font-weight-700);
+}
+
+body {
+    height: 100%;
+    width: 100vw;
+}
+
+/* --- Main Styling ---  */
+
+body {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    justify-content: center;
+    align-content: center;
+    background-color: var(--clr-Stone-100);
+}
+
+.header { grid-area: header; }
+.main-content { grid-area: main; }
+.footer { grid-area: footer; }
+
+.header,
+.main-content,
+.footer {
+    width: 100%;
+    max-width: 45rem;
+    height: 100%;
+    background-color: var(--clr-White);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block-end: 2rem;
+}
+
+.header__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.header__content {
+    padding-inline: 2rem;
+}
+
+.header__title {
+    margin-bottom: 1rem;
+}
+
+.header__description {
+    font-size: var(--font-size-100);
+    color: var(--clr-Grey-600);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "prep-time"
+        "ingredients"
+        "instructions"
+        "nutrition";
+    padding-inline: 2rem;
+}
+
+.prep-time { grid-area: prep-time; }
+.ingredients { grid-area: ingredients; }
+.instructions { grid-area: instructions; }
+.nutrition { grid-area: nutrition; }
+
+.prep-time,
+.ingredients,
+.instructions,
+.nutrition {
+    width: 100%;
+    height: 100%;
+    padding-block: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.ingredients,
+.instructions {
+    border-bottom: var(--border-width-100);
+}
+
+.prep-time {
+    padding: 1.5rem;
+    background-color: var(--clr-Rose-50);
+    border-radius: var(--border-radius-100);
+}
+
+.prep-time__title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: var(--font-weight-700);
+    color: var(--clr-Rose-800);
+}
+
+.prep-time-list__item {
+    margin-inline-start: 1.5rem;
+    padding-inline-start: 1rem;
+}
+
+.ingredients {
+    gap: 1rem;
+}
+
+.ingredients__item,
+.instructions__item {
+    margin-inline-start: 1.5rem;
+    padding-inline-start: 1rem;
+}
+
+.nutrition {
+    padding-block-end: 2rem;
+}
+
+.nutrition__description {
+    font-size: var(--font-size-100);
+    color: var(--clr-Grey-600);
+}
+
+.nutrition__table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-100);
+}
+
+.nutrition__table tr {
+    border-bottom: var(--border-width-100);
+}
+
+.nutrition__table tr:last-child {
+    border-bottom: none;
+}
+
+.nutrition__table td {
+    padding-block: 0.75rem;
+    text-align: start;
+}
+
+.nutrition__item {
+    width: 50%;
+    padding-inline-start: 2rem;
+    color: var(--clr-Grey-600);
+}
+
+.nutrition__value {
+    text-align: start;
+    color: var(--clr-Brown-800);
+    font-weight: var(--font-weight-700);
+}
+
+
+.footer {
+    padding-block: 0.25rem;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 48rem) {
+    body {
+        padding-block: 4rem;
+    }
+
+    .header,
+    .main-content {
+        background-color: var(--clr-White);
+    }
+
+    .header {
+        border-radius: var(--border-radius-top-200);
+    }
+
+    .main-content {
+        border-radius: var(--border-radius-botton-200);
+    }
+
+    .header__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        padding: 2rem 2rem 0rem 2rem;
+    }
+
+    .header__image img {
+        border-radius: var(--border-radius-100);
+    }
+
+    .footer {
+        padding-block-start: 4rem;
+        background-color: var(--clr-Stone-100);
+    }
+}
